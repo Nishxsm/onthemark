@@ -2,10 +2,31 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import "../../styles/common/Navbar.css";
+
+const navItems = [
+    {
+        label: "HOME",
+        href: "/",
+    },
+    {
+        label: "SERVICES",
+        href: "/services",
+    },
+    {
+        label: "PORTFOLIO",
+        href: "/portfolio",
+    },
+    {
+        label: "CONTACT",
+        href: "/contact",
+    },
+];
 
 export default function Navbar() {
     const [hidden, setHidden] = useState(false);
+    const pathname = usePathname();
 
     useEffect(() => {
         let lastScrollY = window.scrollY;
@@ -16,9 +37,13 @@ export default function Navbar() {
             // Always show at the very top
             if (currentScrollY <= 20) {
                 setHidden(false);
-            } else if (currentScrollY > lastScrollY) {
+            }
+            // Scrolling down
+            else if (currentScrollY > lastScrollY) {
                 setHidden(true);
-            } else if (currentScrollY < lastScrollY) {
+            }
+            // Scrolling up
+            else if (currentScrollY < lastScrollY) {
                 setHidden(false);
             }
 
@@ -40,6 +65,7 @@ export default function Navbar() {
                 hidden ? "navbar-hidden" : ""
             }`}
         >
+            {/* Logo */}
             <div className="navbar-brand">
                 <Link href="/">
                     <img
@@ -49,18 +75,39 @@ export default function Navbar() {
                 </Link>
             </div>
 
+            {/* Main navigation */}
             <nav className="navbar-links">
-                <a href="#services">SERVICES</a>
-                <a href="#contact">CONTACT</a>
+                {navItems.map((item) => {
+                    const isActive =
+                        pathname === item.href ||
+                        (
+                            item.href !== "/" &&
+                            pathname.startsWith(`${item.href}/`)
+                        );
 
-                <Link
-                    href="/contact"
-                    className="navbar-button"
-                >
-                    GET STARTED
-                </Link>
-
+                    return (
+                        <Link
+                            key={item.href}
+                            href={item.href}
+                            className={`navbar-link ${
+                                isActive
+                                    ? "navbar-link-active"
+                                    : ""
+                            }`}
+                        >
+                            <span>{item.label}</span>
+                        </Link>
+                    );
+                })}
             </nav>
+
+            {/* CTA */}
+            <Link
+                href="/contact"
+                className="navbar-button"
+            >
+                GET STARTED
+            </Link>
         </header>
     );
 }
