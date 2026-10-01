@@ -1,0 +1,416 @@
+.footer {
+    --cyan: #22d3ee;
+    --text: #aebed1;
+    --muted: #aebed1;
+
+    width: 100%;
+    background: #000;
+    color: var(--text);
+
+    border-top: 1px solid rgba(0, 214, 232, 0.18);
+
+    /*
+        Body font from the reference.
+        Keep your existing CSS variables if these
+        are already defined in your layout.
+    */
+    font-family: var(--font-body), "Outfit", sans-serif;
+
+    padding: 104px 0 52px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* =========================================
+   INNER
+========================================= */
+
+.footer__inner {
+    width: min(1290px, calc(100% - 80px));
+    margin: 0 auto;
+
+    padding: 0;
+
+    display: grid;
+
+    /*
+        Reference has:
+        Brand | Company | Services | Contact
+    */
+    grid-template-columns:
+        1.25fr
+        0.9fr
+        1fr
+        1fr;
+
+    column-gap: 70px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.footer__brand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer__logo {
+    display: block;
+
+    width: 70px;
+    height: auto;
+
+    object-fit: contain;
+
+    /*
+        Reference logo sits slightly higher
+        and has generous space underneath.
+    */
+    margin: 0 0 43px 0;
+}
+
+.footer__tagline {
+    max-width: 335px;
+
+    margin: 0 0 34px;
+
+    color: #b6c4d5;
+
+    font-family: var(--font-body), "Outfit", sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.75;
+
+    letter-spacing: -0.01em;
+}
+
+.footer__cta {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 9px;
+
+    color: var(--cyan);
+
+    font-family: var(--font-body), "Outfit", sans-serif;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    line-height: 1;
+
+    text-decoration: none;
+
+    transition:
+        gap 0.2s ease,
+        color 0.2s ease;
+}
+
+.footer__cta:hover {
+    gap: 13px;
+    color: #4ae7f5;
+}
+
+.footer__cta svg {
+    flex-shrink: 0;
+}
+
+
+/* =========================================
+   COLUMN HEADINGS
+========================================= */
+
+.footer__heading {
+    /*
+        THIS is the font style visible
+        in the reference image.
+    */
+    font-family: var(--font-heading), "Syne", sans-serif;
+
+    font-size: 21px;
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: -0.025em;
+
+    color: #ffffff;
+
+    margin: 0 0 38px;
+}
+
+
+/* =========================================
+   COMPANY / SERVICES
+========================================= */
+
+.footer__list,
+.footer__contact {
+    list-style: none;
+
+    margin: 0;
+    padding: 0;
+}
+
+.footer__list li {
+    margin: 0 0 27px;
+}
+
+.footer__link {
+    display: inline-block;
+
+    color: #aebed1;
+
+    font-family: var(--font-body), "Outfit", sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.35;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.footer__link:hover {
+    color: var(--cyan);
+    transform: translateX(2px);
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.footer__contact li {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 16px;
+
+    margin: 0 0 24px;
+}
+
+.footer__icon {
+    width: 23px;
+    height: 23px;
+
+    flex-shrink: 0;
+
+    margin-top: 0;
+
+    color: var(--cyan);
+}
+
+.footer__contact a {
+    color: #aebed1;
+
+    font-family: var(--font-body), "Outfit", sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+
+    line-height: 1.45;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer__contact a:hover {
+    color: var(--cyan);
+}
+
+
+/* =========================================
+   PHONE / LOCATION STACK
+========================================= */
+
+.footer__stack {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 3px;
+}
+
+.footer__stack a,
+.footer__stack span {
+    display: block;
+}
+
+.footer__muted {
+    color: #aebed1;
+
+    font-family: var(--font-body), "Outfit", sans-serif;
+
+    font-size: 16px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================
+   DESKTOP POSITIONING
+========================================= */
+
+/*
+    The reference has the columns positioned
+    fairly far apart, with the contact column
+    sitting toward the right side.
+*/
+
+.footer__col:nth-child(2) {
+    padding-left: 5px;
+}
+
+.footer__col:nth-child(3) {
+    padding-left: 5px;
+}
+
+.footer__col:nth-child(4) {
+    padding-left: 5px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1100px) {
+
+    .footer {
+        padding: 85px 0 50px;
+    }
+
+    .footer__inner {
+        width: min(900px, calc(100% - 60px));
+
+        grid-template-columns:
+            1.15fr
+            0.85fr
+            1fr
+            1fr;
+
+        column-gap: 40px;
+    }
+
+    .footer__logo {
+        width: 68px;
+    }
+
+    .footer__heading {
+        font-size: 19px;
+    }
+
+    .footer__tagline,
+    .footer__link,
+    .footer__contact a,
+    .footer__muted,
+    .footer__cta {
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 850px) {
+
+    .footer {
+        padding: 75px 0 45px;
+    }
+
+    .footer__inner {
+        width: calc(100% - 60px);
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 55px 45px;
+    }
+
+    .footer__brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer__logo {
+        margin-bottom: 30px;
+    }
+
+    .footer__tagline {
+        max-width: 400px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .footer {
+        padding: 65px 0 40px;
+    }
+
+    .footer__inner {
+        width: calc(100% - 36px);
+
+        grid-template-columns: 1fr;
+
+        gap: 42px;
+    }
+
+    .footer__brand {
+        grid-column: auto;
+    }
+
+    .footer__logo {
+        width: 65px;
+        margin-bottom: 28px;
+    }
+
+    .footer__tagline {
+        max-width: 340px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 28px;
+    }
+
+    .footer__heading {
+        font-size: 19px;
+
+        margin-bottom: 25px;
+    }
+
+    .footer__list li {
+        margin-bottom: 19px;
+    }
+
+    .footer__link,
+    .footer__contact a,
+    .footer__muted {
+        font-size: 15px;
+    }
+
+    .footer__contact li {
+        margin-bottom: 20px;
+    }
+}
