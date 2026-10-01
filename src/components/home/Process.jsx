@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { motion, useInView } from "motion/react";
 import {
     Search,
     Palette,
@@ -188,8 +189,18 @@ function NetworkBackground() {
 }
 
 export default function Process() {
+    const processRef = useRef(null);
+    const isInView = useInView(processRef, {
+        once: true,
+        amount: 0.2,
+    });
+
     return (
-        <section className="process" id="about">
+        <section
+            className="process"
+            id="about"
+            ref={processRef}
+        >
             <NetworkBackground />
 
             <div className="process-header">
@@ -216,9 +227,29 @@ export default function Process() {
                     const Icon = stage.icon;
 
                     return (
-                        <div
+                        <motion.div
                             className="process-item"
                             key={stage.number}
+                            initial={{
+                                opacity: 0,
+                                y: 30,
+                            }}
+                            animate={
+                                isInView
+                                    ? {
+                                          opacity: 1,
+                                          y: 0,
+                                      }
+                                    : {
+                                          opacity: 0,
+                                          y: 30,
+                                      }
+                            }
+                            transition={{
+                                duration: 0.65,
+                                delay: index * 0.12,
+                                ease: [0.22, 1, 0.36, 1],
+                            }}
                         >
                             <article className="process-card">
                                 <div className="process-card-top">
@@ -273,7 +304,7 @@ export default function Process() {
                                     />
                                 </div>
                             )}
-                        </div>
+                        </motion.div>
                     );
                 })}
             </div>
