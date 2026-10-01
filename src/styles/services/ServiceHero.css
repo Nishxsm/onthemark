@@ -1,0 +1,42 @@
+.services-hero {
+    position: relative;
+    width: 100%;
+    min-height: 620px;
+    padding: 115px 7% 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.services-hero-eyebrow {
+    margin-bottom: 30px;
+    color: #00d6e8;
+    font-family: "Outfit", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.services-hero h1 {
+    margin: 0;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(72px, 8vw, 125px);
+    font-weight: 800;
+    line-height: 0.88;
+    letter-spacing: -0.075em;
+}
+
+.services-hero h1 span {
+    color: #00d6e8;
+}
+
+.services-hero p {
+    max-width: 850px;
+    margin: 55px 0 0;
+    color: #8fa4bd;
+    font-family: "Outfit", Arial, sans-serif;
+    font-size: 19px;
+    line-height: 1.6;
+}   

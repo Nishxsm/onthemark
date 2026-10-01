@@ -1,6 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&family=Syne:wght@600;700&display=swap");
+
 :root {
     --background: #ffffff;
     --foreground: #171717;
+
+    --font-body: "Outfit";
+    --font-heading: "Syne";
 }
 
 html {
@@ -18,9 +23,12 @@ body {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+
     color: var(--foreground);
     background: var(--background);
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family: var(--font-body), Arial, Helvetica, sans-serif;
+
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }

@@ -24,7 +24,7 @@
 
 /* Moving scan line */
 
-.navbar::after {
+/* .navbar::after {
     content: "";
     position: absolute;
     left: 6%;
@@ -58,7 +58,7 @@
         left: 94%;
         opacity: 0;
     }
-}
+} */
 
 /* Hidden navbar */
 
