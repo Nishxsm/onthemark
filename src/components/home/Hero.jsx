@@ -35,10 +35,10 @@ export default function Hero() {
                     ease: "easeOut",
                 }}
             >
-                <div className="hero-tag">
+                {/* <div className="hero-tag">
                     <span />
                     DIGITAL PRODUCTS, BUILT WITH PURPOSE
-                </div>
+                </div> */}
 
                 <h1>
                     Strategy, design
