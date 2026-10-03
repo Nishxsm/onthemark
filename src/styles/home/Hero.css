@@ -81,10 +81,7 @@
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.035);
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.13em;
@@ -125,10 +122,7 @@
 .hero-content > p {
     max-width: 650px;
     margin: 38px 0 0;
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 19px;
     font-weight: 400;
     line-height: 1.55;
@@ -144,108 +138,113 @@
     margin-top: 38px;
 }
 
+/* Buttons */
 .hero-button {
+    --button-x: 0px;
+    --button-y: 0px;
+
     position: relative;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     height: 56px;
-    padding: 0 25px;
+    padding: 0 9px 0 24px;
     border-radius: 999px;
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
-    font-size: 14px;
-    font-weight: 700;
+    font-family: "Outfit", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
     text-decoration: none;
     box-sizing: border-box;
     overflow: hidden;
     transition:
-        transform 250ms ease,
-        background 250ms ease,
-        border-color 250ms ease,
-        box-shadow 250ms ease;
+        transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+        background 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease;
 }
 
-/* Sliding button text */
+/* Button label */
 .button-label {
     position: relative;
-    display: flex;
-    flex-direction: column;
-    height: 20px;
-    overflow: hidden;
-    line-height: 20px;
-}
-
-.button-label span {
-    display: block;
-    height: 20px;
+    z-index: 2;
     white-space: nowrap;
+    transform: translate(
+        var(--button-x),
+        var(--button-y)
+    );
     transition:
-        transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.button-label span:last-child {
-    position: absolute;
-    top: 20px;
-    left: 0;
+        transform 150ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Primary button */
 .hero-button-primary {
-    gap: 20px;
-    border: 1px solid rgba(90, 145, 255, 0.5);
-    background:
-        linear-gradient(
-            135deg,
-            #3478f6 0%,
-            #2868df 100%
-        );
+    gap: 25px;
+    border: 1px solid rgba(52, 120, 246, 0.5);
+    background: rgba(52, 120, 246, 0.07);
     color: #ffffff;
     box-shadow:
-        0 8px 25px rgba(52, 120, 246, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .hero-button-primary .button-label {
     min-width: 112px;
 }
 
+/* Arrow */
 .button-arrow {
-    display: inline-flex;
+    position: relative;
+    z-index: 2;
+    width: 38px;
+    height: 38px;
+    flex-shrink: 0;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 20px;
-    font-size: 18px;
-    font-weight: 400;
+    border-radius: 50%;
+    background: #3478f6;
+    transition:
+        transform 350ms cubic-bezier(0.16, 1, 0.3, 1),
+        background 250ms ease;
+}
+
+.button-arrow svg {
+    width: 24px;
+    height: 16px;
+    overflow: visible;
     transition:
         transform 350ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.hero-button-primary:hover {
-    background:
-        linear-gradient(
-            135deg,
-            #4384f7 0%,
-            #3478f6 100%
-        );
-    transform: translateY(-2px);
-    box-shadow:
-        0 12px 32px rgba(52, 120, 246, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+.button-arrow path {
+    fill: none;
+    stroke: #050505;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
-.hero-button-primary:hover .button-label span {
-    transform: translateY(-20px);
+/* Primary hover */
+.hero-button-primary:hover {
+    transform: translateY(-3px);
+    border-color: rgba(52, 120, 246, 0.9);
+    background: rgba(52, 120, 246, 0.12);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.06),
+        0 12px 30px rgba(52, 120, 246, 0.12);
 }
 
 .hero-button-primary:hover .button-arrow {
-    transform: translate(3px, -3px);
+    transform: translateX(2px);
+}
+
+.hero-button-primary:hover .button-arrow svg {
+    transform: rotate(-45deg);
 }
 
 /* Secondary button */
 .hero-button-secondary {
+    padding: 0 25px;
     border: 1px solid rgba(255, 255, 255, 0.16);
     background: rgba(255, 255, 255, 0.035);
     color: #d3d6dc;
@@ -257,14 +256,10 @@
 .hero-button-secondary:hover {
     border-color: rgba(255, 255, 255, 0.3);
     background: rgba(255, 255, 255, 0.07);
-    transform: translateY(-2px);
+    transform: translateY(-3px);
     box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.08),
         0 12px 30px rgba(0, 0, 0, 0.2);
-}
-
-.hero-button-secondary:hover .button-label span {
-    transform: translateY(-20px);
 }
 
 /* Large screens */
@@ -337,5 +332,18 @@
 
     .hero-actions a {
         width: 100%;
+    }
+
+    .hero-button {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-button,
+    .button-label,
+    .button-arrow,
+    .button-arrow svg {
+        transition: none;
     }
 }

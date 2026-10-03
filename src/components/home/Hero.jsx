@@ -15,6 +15,41 @@ export default function Hero() {
         hero.style.setProperty("--mouse-y", `${y}px`);
     };
 
+    const handleButtonMove = (event) => {
+        const button = event.currentTarget;
+        const rect = button.getBoundingClientRect();
+
+        const x = event.clientX - rect.left;
+        const y = event.clientY - rect.top;
+
+        const moveX = (x - rect.width / 2) * 0.08;
+        const moveY = (y - rect.height / 2) * 0.08;
+
+        button.style.setProperty(
+            "--button-x",
+            `${moveX}px`
+        );
+
+        button.style.setProperty(
+            "--button-y",
+            `${moveY}px`
+        );
+    };
+
+    const handleButtonLeave = (event) => {
+        const button = event.currentTarget;
+
+        button.style.setProperty(
+            "--button-x",
+            "0px"
+        );
+
+        button.style.setProperty(
+            "--button-y",
+            "0px"
+        );
+    };
+
     return (
         <section
             className="hero"
@@ -35,11 +70,6 @@ export default function Hero() {
                     ease: "easeOut",
                 }}
             >
-                {/* <div className="hero-tag">
-                    <span />
-                    DIGITAL PRODUCTS, BUILT WITH PURPOSE
-                </div> */}
-
                 <h1>
                     Strategy, design
                     <br />
@@ -49,31 +79,42 @@ export default function Hero() {
                 </h1>
 
                 <p>
-                    From early ideas and MVPs to websites, applications
-                    and custom technology, On The Mark helps businesses
-                    plan, build and launch digital products.
+                    From early ideas and MVPs to websites,
+                    applications and custom technology, On The
+                    Mark helps businesses plan, build and launch
+                    digital products.
                 </p>
 
                 <div className="hero-actions">
                     <a
                         href="#contact"
                         className="hero-button hero-button-primary"
+                        onMouseMove={handleButtonMove}
+                        onMouseLeave={handleButtonLeave}
                     >
                         <span className="button-label">
-                            <span>Start a project</span>
-                            <span>Start a project</span>
+                            Start a project
                         </span>
 
-                        <span className="button-arrow">↗</span>
+                        <span className="button-arrow">
+                            <svg
+                                viewBox="0 0 32 20"
+                                aria-hidden="true"
+                            >
+                                <path d="M2 10H27" />
+                                <path d="M20 3L27 10L20 17" />
+                            </svg>
+                        </span>
                     </a>
 
                     <a
                         href="#services"
                         className="hero-button hero-button-secondary"
+                        onMouseMove={handleButtonMove}
+                        onMouseLeave={handleButtonLeave}
                     >
                         <span className="button-label">
-                            <span>Our services</span>
-                            <span>Our services</span>
+                            Our services
                         </span>
                     </a>
                 </div>
