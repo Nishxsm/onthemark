@@ -187,8 +187,8 @@ export default function Footer() {
                             <PhoneIcon />
 
                             <div className="footer__contact-stack">
-                                <a href="">
-                                    
+                                <a href="8369877560">
+                                    +91 8369877560
                                 </a>
 
                                 <a href="">

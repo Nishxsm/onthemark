@@ -3,9 +3,6 @@ import "../../styles/services/ServiceHero.css";
 export default function ServiceHero() {
     return (
         <section className="services-hero">
-            <span className="services-hero-eyebrow">
-                WHAT WE DO
-            </span>
 
             <h1>
                 Ideas into

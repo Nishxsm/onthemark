@@ -51,9 +51,31 @@ const appIcon = (
     </svg>
 );
 
+const marketingIcon = (
+    <svg viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M8 25L28 17V31L8 23V25Z" />
+        <path d="M28 17L39 12V36L28 31" />
+        <path d="M12 25L15 38H21L18 27" />
+    </svg>
+);
+
 export const services = [
     {
         number: "01",
+        category: "DIGITAL MARKETING",
+        title: "Digital Marketing",
+        description:
+            "Data-driven digital campaigns that help your business reach the right audience, generate leads and grow online.",
+        features: [
+            "Generating Leads",
+            "Meta Ads",
+            "Audience Targeting",
+            "Campaign Optimization",
+        ],
+        icon: marketingIcon,
+    },
+    {
+        number: "02",
         category: "CONSULTANCY",
         title: "Digital Consultancy",
         description:
@@ -67,7 +89,7 @@ export const services = [
         icon: consultancyIcon,
     },
     {
-        number: "02",
+        number: "03",
         category: "DEVELOPMENT",
         title: "Web Development",
         description:
@@ -81,7 +103,7 @@ export const services = [
         icon: developmentIcon,
     },
     {
-        number: "03",
+        number: "04",
         category: "WEBSITES",
         title: "Single Page Website",
         description:
@@ -95,7 +117,7 @@ export const services = [
         icon: websiteIcon,
     },
     {
-        number: "04",
+        number: "05",
         category: "PRODUCT",
         title: "Product MVP",
         description:
@@ -109,7 +131,7 @@ export const services = [
         icon: mvpIcon,
     },
     {
-        number: "05",
+        number: "06",
         category: "DEPLOYMENT",
         title: "Deployment Assistance",
         description:
@@ -123,7 +145,7 @@ export const services = [
         icon: deploymentIcon,
     },
     {
-        number: "06",
+        number: "07",
         category: "TECH SOLUTIONS",
         title: "Tech Solutions",
         description:
@@ -137,7 +159,7 @@ export const services = [
         icon: techIcon,
     },
     {
-        number: "07",
+        number: "08",
         category: "APPLICATIONS",
         title: "App Development",
         description:

@@ -1,8 +1,8 @@
 .services-cta {
     position: relative;
     width: 100%;
-    min-height: 600px;
-    padding: 110px 7% 35px;
+    min-height: 560px;
+    padding: 100px 7% 90px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -10,19 +10,32 @@
     box-sizing: border-box;
     background: #050505;
     color: #ffffff;
+    isolation: isolate;
 }
 
-.services-cta-light {
+.services-cta-glow {
     position: absolute;
-    width: 520px;
-    height: 520px;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -55%);
+    width: 520px;
+    height: 520px;
+    transform: translate(-50%, -50%);
     border-radius: 50%;
-    background: rgba(0, 214, 232, 0.07);
+    background: rgba(52, 120, 246, 0.07);
     filter: blur(100px);
     pointer-events: none;
+    z-index: -1;
+}
+
+.services-cta-accent {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 70px;
+    height: 1px;
+    transform: translateX(-50%);
+    background: #3478f6;
+    opacity: 0.75;
 }
 
 .services-cta-content {
@@ -33,9 +46,9 @@
 }
 
 .services-cta-label {
-    display: inline-block;
-    margin-bottom: 30px;
-    color: #00d6e8;
+    display: block;
+    margin-bottom: 28px;
+    color: #3478f6;
     font-family: "Outfit", Arial, sans-serif;
     font-size: 12px;
     font-weight: 500;
@@ -46,18 +59,18 @@
     margin: 0;
     color: #ffffff;
     font-family: Arial, Helvetica, sans-serif;
-    font-size: clamp(62px, 7vw, 105px);
+    font-size: clamp(58px, 6.5vw, 94px);
     font-weight: 800;
-    line-height: 0.9;
+    line-height: 0.92;
     letter-spacing: -0.075em;
 }
 
 .services-cta-content h2 span {
-    color: #00d6e8;
+    color: #3478f6;
 }
 
 .services-cta-content p {
-    max-width: 480px;
+    max-width: 520px;
     margin: 34px auto 0;
     color: #8191a3;
     font-family: "Outfit", Arial, sans-serif;
@@ -73,88 +86,73 @@
     display: inline-flex;
     align-items: center;
     gap: 25px;
-    border: 1px solid rgba(0, 214, 232, 0.5);
+    border: 1px solid rgba(52, 120, 246, 0.45);
     border-radius: 999px;
-    background: rgba(0, 214, 232, 0.08);
+    background: rgba(52, 120, 246, 0.07);
     color: #ffffff;
     font-family: "Outfit", Arial, sans-serif;
     font-size: 15px;
     font-weight: 500;
     box-sizing: border-box;
     transition:
-        background 0.3s ease,
+        transform 0.3s ease,
         border-color 0.3s ease,
-        transform 0.3s ease;
+        background 0.3s ease;
 }
 
 .services-cta-arrow {
     width: 38px;
     height: 38px;
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #00d6e8;
-    color: #050505;
-    font-size: 18px;
+    background: #3478f6;
     transition: transform 0.3s ease;
+}
+
+.services-cta-arrow svg {
+    width: 24px;
+    height: 16px;
+    overflow: visible;
+}
+
+.services-cta-arrow path {
+    fill: none;
+    stroke: #050505;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .services-cta-button:hover {
     transform: translateY(-3px);
-    border-color: #00d6e8;
-    background: rgba(0, 214, 232, 0.14);
+    border-color: rgba(52, 120, 246, 0.9);
+    background: rgba(52, 120, 246, 0.12);
 }
 
 .services-cta-button:hover .services-cta-arrow {
-    transform: rotate(45deg);
-}
-
-.services-cta-line {
-    position: absolute;
-    left: 7%;
-    right: 7%;
-    bottom: 78px;
-    height: 1px;
-    background: rgba(255, 255, 255, 0.09);
-}
-
-.services-cta-footer {
-    position: absolute;
-    left: 7%;
-    right: 7%;
-    bottom: 34px;
-    display: flex;
-    justify-content: space-between;
-    color: #4e5965;
-    font-family: "Outfit", Arial, sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
+    transform: translateX(4px);
 }
 
 @media (max-width: 600px) {
     .services-cta {
-        min-height: 540px;
-        padding: 90px 7% 30px;
+        min-height: 500px;
+        padding: 85px 7% 75px;
     }
 
     .services-cta-content h2 {
-        font-size: clamp(52px, 15vw, 78px);
+        font-size: clamp(50px, 14vw, 76px);
     }
 
     .services-cta-content p {
+        margin-top: 28px;
         font-size: 15px;
     }
 
-    .services-cta-line {
-        left: 6%;
-        right: 6%;
-    }
-
-    .services-cta-footer {
-        left: 6%;
-        right: 6%;
+    .services-cta-button {
+        margin-top: 32px;
     }
 }
 
