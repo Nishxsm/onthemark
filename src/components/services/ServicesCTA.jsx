@@ -23,7 +23,6 @@ export default function ServicesCTA() {
                     ease: [0.22, 1, 0.36, 1],
                 }}
             >
-
                 <h2>
                     Have something
                     <br />
@@ -38,18 +37,56 @@ export default function ServicesCTA() {
                 <a
                     href="/contact"
                     className="services-cta-button"
+                    onMouseMove={(event) => {
+                        const rect =
+                            event.currentTarget.getBoundingClientRect();
+
+                        const x =
+                            event.clientX - rect.left;
+                        const y =
+                            event.clientY - rect.top;
+
+                        const offsetX =
+                            (x / rect.width - 0.5) * 8;
+
+                        const offsetY =
+                            (y / rect.height - 0.5) * 5;
+
+                        event.currentTarget.style.setProperty(
+                            "--text-x",
+                            `${offsetX}px`
+                        );
+
+                        event.currentTarget.style.setProperty(
+                            "--text-y",
+                            `${offsetY}px`
+                        );
+                    }}
+                    onMouseLeave={(event) => {
+                        event.currentTarget.style.setProperty(
+                            "--text-x",
+                            "0px"
+                        );
+
+                        event.currentTarget.style.setProperty(
+                            "--text-y",
+                            "0px"
+                        );
+                    }}
                 >
-                    <span>Start a project</span>
+                    <span className="services-cta-text">
+                        Start a project
+                    </span>
 
                     <span className="services-cta-arrow">
-                    <svg
-                    viewBox="0 0 32 20"
-                    aria-hidden="true"
-                    >
-                <path d="M2 10H27" />
-                <path d="M20 3L27 10L20 17" />
-    </svg>
-</span>
+                        <svg
+                            viewBox="0 0 32 20"
+                            aria-hidden="true"
+                        >
+                            <path d="M2 10H27" />
+                            <path d="M20 3L27 10L20 17" />
+                        </svg>
+                    </span>
                 </a>
             </motion.div>
         </section>
