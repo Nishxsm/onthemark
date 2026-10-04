@@ -30,3 +30,14 @@
         padding-bottom: 80px;
     }
 }
+
+.services-page {
+    position: relative;
+    overflow: hidden;
+    background: #080808;
+}
+
+.services-content-sections {
+    position: relative;
+    z-index: 2;
+}

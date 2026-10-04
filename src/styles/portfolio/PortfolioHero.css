@@ -6,7 +6,7 @@
     display: flex;
     align-items: center;
     box-sizing: border-box;
-    background: #080808;
+    background: transparent;
     color: #ffffff;
     overflow: hidden;
 }

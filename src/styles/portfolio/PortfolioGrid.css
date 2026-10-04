@@ -3,7 +3,7 @@
     z-index: 3;
     width: 100%;
     padding: 55px 7% 120px;
-    background: #080808;
+    background: transparent;
     overflow: visible;
 }
 
@@ -112,4 +112,15 @@
         grid-template-columns: 1fr;
         gap: 25px;
     }
+}
+
+.portfolio-content {
+    position: relative;
+    overflow: hidden;
+    background: #080808;
+}
+
+.portfolio-content-sections {
+    position: relative;
+    z-index: 2;
 }

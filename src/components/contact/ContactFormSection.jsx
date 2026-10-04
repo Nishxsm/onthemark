@@ -5,8 +5,6 @@ import {
     Phone,
     MapPin,
     User,
-    CalendarDays,
-    Clock3,
     Building2,
     MessageSquare,
     Send,
@@ -165,34 +163,6 @@ export default function ContactFormSection() {
                                 id="company"
                                 type="text"
                                 placeholder="Company or project type"
-                            />
-                        </div>
-                    </div>
-
-                    <div className="contact-form-row">
-                        <div className="contact-field">
-                            <label htmlFor="date">
-                                <CalendarDays />
-                                Select Date *
-                            </label>
-
-                            <input
-                                id="date"
-                                type="date"
-                                required
-                            />
-                        </div>
-
-                        <div className="contact-field">
-                            <label htmlFor="time">
-                                <Clock3 />
-                                Select Time *
-                            </label>
-
-                            <input
-                                id="time"
-                                type="time"
-                                required
                             />
                         </div>
                     </div>

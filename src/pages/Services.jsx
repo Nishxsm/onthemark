@@ -1,5 +1,6 @@
 import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
+import NetworkBackground from "../components/common/NetworkBackground";
 import ServiceHero from "../components/services/ServiceHero";
 import ServiceCard from "../components/services/ServiceCard";
 import ServicesCTA from "../components/services/ServicesCTA";
@@ -12,18 +13,22 @@ export default function Services() {
             <Navbar />
 
             <main className="services-page">
-                <ServiceHero />
+                <NetworkBackground />
 
-                <section className="services-page-list">
-                    {services.map((service) => (
-                        <ServiceCard
-                            key={service.number}
-                            service={service}
-                        />
-                    ))}
-                </section>
+                <div className="services-content-sections">
+                    <ServiceHero />
 
-                <ServicesCTA />
+                    <section className="services-page-list">
+                        {services.map((service) => (
+                            <ServiceCard
+                                key={service.number}
+                                service={service}
+                            />
+                        ))}
+                    </section>
+
+                    <ServicesCTA />
+                </div>
             </main>
 
             <Footer />
