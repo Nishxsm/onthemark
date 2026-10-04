@@ -1,0 +1,115 @@
+.portfolio-work-section {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 55px 7% 120px;
+    background: #080808;
+    overflow: visible;
+}
+
+.portfolio-work-inner {
+    position: relative;
+    z-index: 4;
+    max-width: 1470px;
+    margin: 0 auto;
+}
+
+/* Filters */
+.portfolio-filters {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 58px;
+    padding-top: 5px;
+    overflow: visible;
+}
+
+.portfolio-filter {
+    position: relative;
+    z-index: 6;
+    flex-shrink: 0;
+    height: 62px;
+    padding: 0 30px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.025);
+    color: #8e9caf;
+    font-family: "Outfit", Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    transition:
+        color 250ms ease,
+        background 250ms ease,
+        border-color 250ms ease,
+        transform 250ms ease;
+}
+
+.portfolio-filter:hover {
+    color: #ffffff;
+    border-color: rgba(52, 120, 246, 0.45);
+    background: rgba(52, 120, 246, 0.06);
+    transform: translateY(-2px);
+}
+
+.portfolio-filter-active {
+    border-color: #3478f6;
+    background: #3478f6;
+    color: #ffffff;
+}
+
+.portfolio-filter-active:hover {
+    border-color: #3478f6;
+    background: #3478f6;
+    transform: translateY(-2px);
+}
+
+/* Grid */
+.portfolio-work-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 32px;
+}
+
+@media (max-width: 1100px) {
+    .portfolio-work-section {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .portfolio-work-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .portfolio-work-section {
+        padding: 35px 5% 80px;
+    }
+
+    .portfolio-filters {
+        gap: 10px;
+        margin-bottom: 35px;
+        overflow-x: auto;
+        scrollbar-width: none;
+    }
+
+    .portfolio-filters::-webkit-scrollbar {
+        display: none;
+    }
+
+    .portfolio-filter {
+        height: 50px;
+        padding: 0 20px;
+        font-size: 13px;
+    }
+
+    .portfolio-work-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+}
