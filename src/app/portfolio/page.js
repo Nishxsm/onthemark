@@ -1,5 +1,5 @@
 import Portfolio from "../../pages/Portfolio";
 
-export default function ServicesPage() {
+export default function PortfolioPage() {
     return <Portfolio />;
 }
