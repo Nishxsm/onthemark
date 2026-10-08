@@ -1,0 +1,211 @@
+/* final cta */
+
+.final-cta {
+    position: relative;
+    width: 100%;
+    min-height: 680px;
+    padding: 120px 6% 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-sizing: border-box;
+    background:
+        radial-gradient(
+            circle at 50% 45%,
+            rgba(52, 120, 246, 0.055),
+            transparent 42%
+        ),
+        #080808;
+    color: #ffffff;
+}
+
+/* content */
+
+.final-cta-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1050px;
+    text-align: center;
+}
+
+/* heading */
+
+.final-cta h2 {
+    margin: 0;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: clamp(58px, 7vw, 108px);
+    font-weight: 800;
+    line-height: 0.9;
+    letter-spacing: -0.07em;
+    color: #f5f5f5;
+}
+
+.final-cta h2 span {
+    color: #3478f6;
+    font-style: italic;
+    font-weight: 900;
+}
+
+/* description */
+
+.final-cta p {
+    max-width: 620px;
+    margin: 42px auto 0;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+    color: #8fa4bd;
+}
+
+/* actions */
+
+.final-cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 48px;
+}
+
+/* buttons */
+
+.final-cta-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    min-width: 230px;
+    height: 58px;
+    padding: 0 25px;
+    border-radius: 999px;
+    box-sizing: border-box;
+    font-family:
+        "Outfit",
+        Arial,
+        sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition:
+        transform 300ms cubic-bezier(0.16, 1, 0.3, 1),
+        background 300ms ease,
+        border-color 300ms ease,
+        box-shadow 300ms ease,
+        color 300ms ease;
+}
+
+/* primary */
+
+.final-cta-button-primary {
+    border: 1px solid rgba(52, 120, 246, 0.7);
+    background: rgba(52, 120, 246, 0.07);
+    color: #ffffff;
+}
+
+.final-cta-arrow {
+    font-size: 22px;
+    line-height: 1;
+    transition:
+        transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.final-cta-button-primary:hover {
+    transform: translateY(-3px);
+    border-color: #3478f6;
+    background: rgba(52, 120, 246, 0.13);
+    box-shadow:
+        0 12px 35px rgba(52, 120, 246, 0.12);
+}
+
+.final-cta-button-primary:hover .final-cta-arrow {
+    transform: translateX(6px);
+}
+
+/* secondary */
+
+.final-cta-button-secondary {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.02);
+    color: #c8ced8;
+}
+
+.final-cta-work-arrow {
+    font-size: 19px;
+    line-height: 1;
+    transition:
+        transform 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.final-cta-button-secondary:hover {
+    transform: translateY(-3px);
+    border-color: rgba(255, 255, 255, 0.25);
+    background: rgba(255, 255, 255, 0.045);
+    color: #ffffff;
+}
+
+.final-cta-button-secondary:hover .final-cta-work-arrow {
+    transform: translate(4px, -4px);
+}
+
+/* tablet */
+
+@media (max-width: 900px) {
+    .final-cta {
+        min-height: 620px;
+        padding: 100px 6% 110px;
+    }
+
+    .final-cta h2 {
+        font-size: clamp(52px, 8vw, 80px);
+    }
+}
+
+/* mobile */
+
+@media (max-width: 650px) {
+    .final-cta {
+        min-height: 620px;
+        padding: 85px 6% 90px;
+    }
+
+    .final-cta h2 {
+        font-size: 13vw;
+        line-height: 0.92;
+    }
+
+    .final-cta p {
+        max-width: 380px;
+        margin-top: 30px;
+        font-size: 15px;
+    }
+
+    .final-cta-actions {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 35px;
+    }
+
+    .final-cta-button {
+        width: 100%;
+        max-width: 340px;
+    }
+}
+
+/* reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+    .final-cta-button,
+    .final-cta-arrow,
+    .final-cta-work-arrow {
+        transition: none;
+    }
+}

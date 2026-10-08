@@ -47,7 +47,7 @@ const stages = [
     },
 ];
 
-export default function Process() {
+export default function HowWeWork() {
     const processRef = useRef(null);
 
     const isInView = useInView(processRef, {

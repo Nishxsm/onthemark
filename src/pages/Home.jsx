@@ -4,6 +4,7 @@ import Navbar from "../components/common/Navbar";
 import HowWeWork from "../components/home/HowWeWork";
 import Process from "../components/home/Process";
 import Service from "../components/home/Service";
+import ProjectCTA from "../components/home/ProjectCTA";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <HowWeWork />
             <Service />
             <Process />
+            <ProjectCTA />
             <Footer />
         </main>
     );
