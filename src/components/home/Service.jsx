@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
+import NetworkBackground from "../common/NetworkBackground";
 import "../../styles/home/Service.css";
 
 const services = [
@@ -60,7 +61,7 @@ const services = [
     },
 ];
 
-const Service = () => {
+export default function Service() {
     const sectionRef = useRef(null);
     const [dark, setDark] = useState(false);
     const [visible, setVisible] = useState(false);
@@ -97,8 +98,9 @@ const Service = () => {
                 dark ? "services-dark" : ""
             }`}
         >
-            <div className="services-inner">
+            <NetworkBackground />
 
+            <div className="services-inner">
                 <div className="services-heading">
                     <span className="services-eyebrow">
                         WHAT WE DO
@@ -138,13 +140,9 @@ const Service = () => {
                                     {service.icon}
                                 </div>
 
-                                <h3>
-                                    {service.title}
-                                </h3>
+                                <h3>{service.title}</h3>
 
-                                <p>
-                                    {service.description}
-                                </p>
+                                <p>{service.description}</p>
                             </div>
 
                             <div className="service-card-bottom">
@@ -164,18 +162,13 @@ const Service = () => {
                     href="/services"
                     className="services-link"
                 >
-                    <span>
-                        View All Services
-                    </span>
+                    <span>View All Services</span>
 
                     <span className="services-arrow">
                         →
                     </span>
                 </Link>
-
             </div>
         </section>
     );
-};
-
-export default Service; 
+}
