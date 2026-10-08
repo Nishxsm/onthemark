@@ -1,9 +1,30 @@
 "use client";
 
-import { motion } from "motion/react";
+import { useEffect, useState } from "react";
+import { AnimatePresence, motion } from "motion/react";
 import "../../styles/home/Hero.css";
 
+const rotatingPhrases = [
+    "under one roof.",
+    "built to perform.",
+    "made for growth.",
+    "designed to scale.",
+    "from idea to reality.",
+];
+
 export default function Hero() {
+    const [phraseIndex, setPhraseIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setPhraseIndex((current) => {
+                return (current + 1) % rotatingPhrases.length;
+            });
+        }, 2800);
+
+        return () => clearInterval(interval);
+    }, []);
+
     const handleMouseMove = (event) => {
         const hero = event.currentTarget;
         const rect = hero.getBoundingClientRect();
@@ -75,7 +96,35 @@ export default function Hero() {
                     <br />
                     and technology
                     <br />
-                    <span>under one roof.</span>
+                    <span className="hero-rotating-line">
+                        <AnimatePresence
+                            mode="wait"
+                            initial={false}
+                        >
+                            <motion.span
+                                key={rotatingPhrases[phraseIndex]}
+                                className="hero-rotating-text"
+                                initial={{
+                                    opacity: 0,
+                                    y: 28,
+                                }}
+                                animate={{
+                                    opacity: 1,
+                                    y: 0,
+                                }}
+                                exit={{
+                                    opacity: 0,
+                                    y: -28,
+                                }}
+                                transition={{
+                                    duration: 0.45,
+                                    ease: [0.22, 1, 0.36, 1],
+                                }}
+                            >
+                                {rotatingPhrases[phraseIndex]}
+                            </motion.span>
+                        </AnimatePresence>
+                    </span>
                 </h1>
 
                 <p>
