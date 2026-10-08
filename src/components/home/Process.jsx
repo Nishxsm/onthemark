@@ -7,7 +7,6 @@ import {
     Palette,
     Code2,
     Rocket,
-    ArrowRight,
 } from "lucide-react";
 import NetworkBackground from "../common/NetworkBackground";
 import "../../styles/home/Process.css";
@@ -15,34 +14,62 @@ import "../../styles/home/Process.css";
 const stages = [
     {
         number: "01",
-        label: "UNDERSTAND",
-        title: "Discover",
+        label: "DISCOVER",
+        title: "We understand the problem before we build.",
         description:
-            "We understand your idea, goals and technical needs before anything gets built.",
+            "We start by understanding your business, your audience and what you're trying to achieve. This gives us a clear direction before design or development begins.",
+        tags: [
+            "DISCOVERY",
+            "REQUIREMENTS",
+            "RESEARCH",
+            "STRATEGY",
+            "USER FLOWS",
+        ],
         icon: Search,
     },
     {
         number: "02",
-        label: "DEFINE",
-        title: "Design",
+        label: "DESIGN",
+        title: "We turn ideas into clear digital experiences.",
         description:
-            "We turn your vision into clear interfaces, experiences and product direction.",
+            "We shape the idea into interfaces and experiences that are simple, useful and aligned with your goals. Every important decision is made with the end user in mind.",
+        tags: [
+            "WIREFRAMES",
+            "UI DESIGN",
+            "UX DESIGN",
+            "PROTOTYPES",
+            "DESIGN SYSTEMS",
+        ],
         icon: Palette,
     },
     {
         number: "03",
-        label: "CREATE",
-        title: "Build",
+        label: "BUILD",
+        title: "We build with purpose, performance and precision.",
         description:
-            "We develop websites, applications, MVPs and custom digital solutions.",
+            "Once the direction is clear, we turn the designs into working digital products using the right technologies for the project.",
+        tags: [
+            "DEVELOPMENT",
+            "INTEGRATIONS",
+            "TESTING",
+            "PERFORMANCE",
+            "SECURITY",
+        ],
         icon: Code2,
     },
     {
         number: "04",
-        label: "DELIVER",
-        title: "Launch",
+        label: "LAUNCH",
+        title: "We launch, support and keep improving.",
         description:
-            "We bring everything together, deploy it and get your product ready for users.",
+            "Going live is only the beginning. We help with deployment, monitor performance and provide ongoing support so your product can continue to evolve.",
+        tags: [
+            "DEPLOYMENT",
+            "MONITORING",
+            "SUPPORT",
+            "OPTIMIZATION",
+            "MAINTENANCE",
+        ],
         icon: Rocket,
     },
 ];
@@ -52,7 +79,7 @@ export default function Process() {
 
     const isInView = useInView(processRef, {
         once: false,
-        amount: 0.2,
+        amount: 0.15,
     });
 
     return (
@@ -63,110 +90,144 @@ export default function Process() {
         >
             <NetworkBackground />
 
-            <div className="process-header">
-                <div className="process-eyebrow">
-                    <span className="process-eyebrow-line" />
-                    <span>HOW WE WORK</span>
-                </div>
+            <div className="process-inner">
+                <motion.div
+                    className="process-header"
+                    initial={{
+                        opacity: 0,
+                        y: 30,
+                    }}
+                    animate={
+                        isInView
+                            ? {
+                                  opacity: 1,
+                                  y: 0,
+                              }
+                            : {
+                                  opacity: 0,
+                                  y: 30,
+                              }
+                    }
+                    transition={{
+                        duration: 0.7,
+                        ease: [0.22, 1, 0.36, 1],
+                    }}
+                >
+                    <div className="process-eyebrow">
+                        <span className="process-eyebrow-line" />
+                        <span>HOW WE PROCESS</span>
+                    </div>
 
-                <div className="process-heading-row">
-                    <h2>
-                        From idea to{" "}
-                        <span>something real.</span>
-                    </h2>
+                    <div className="process-heading-row">
+                        <h2>
+                            A process built
+                            <br />
+                            for{" "}
+                            <span>better results.</span>
+                        </h2>
 
-                    <p>
-                        A straightforward process designed to
-                        turn ideas into useful digital products.
-                    </p>
-                </div>
-            </div>
+                        <p>
+                            From the first conversation to the
+                            final launch, we follow a clear
+                            process designed to turn ideas into
+                            useful digital products.
+                        </p>
+                    </div>
+                </motion.div>
 
-            <div className="process-grid">
-                {stages.map((stage, index) => {
-                    const Icon = stage.icon;
+                <div className="process-stages">
+                    {stages.map((stage, index) => {
+                        const Icon = stage.icon;
 
-                    return (
-                        <motion.div
-                            className="process-item"
-                            key={stage.number}
-                            initial={{
-                                opacity: 0,
-                                y: 30,
-                            }}
-                            animate={
-                                isInView
-                                    ? {
-                                          opacity: 1,
-                                          y: 0,
-                                      }
-                                    : {
-                                          opacity: 0,
-                                          y: 30,
-                                      }
-                            }
-                            transition={{
-                                duration: 0.65,
-                                delay: index * 0.12,
-                                ease: [0.22, 1, 0.36, 1],
-                            }}
-                        >
-                            <article className="process-card">
-                                <div className="process-card-top">
-                                    <span className="process-number">
+                        return (
+                            <motion.article
+                                className="process-stage"
+                                key={stage.number}
+                                initial={{
+                                    opacity: 0,
+                                    y: 60,
+                                }}
+                                animate={
+                                    isInView
+                                        ? {
+                                              opacity: 1,
+                                              y: 0,
+                                          }
+                                        : {
+                                              opacity: 0,
+                                              y: 60,
+                                          }
+                                }
+                                transition={{
+                                    duration: 0.75,
+                                    delay: 0.12 + index * 0.12,
+                                    ease: [
+                                        0.22,
+                                        1,
+                                        0.36,
+                                        1,
+                                    ],
+                                }}
+                            >
+                                <div className="process-stage-content">
+                                    <div className="process-stage-meta">
+                                        <div className="process-icon">
+                                            <Icon
+                                                size={29}
+                                                strokeWidth={1.5}
+                                            />
+                                        </div>
+
+                                        <span className="process-number">
+                                            {stage.number}
+                                        </span>
+
+                                        <span className="process-label">
+                                            {stage.label}
+                                        </span>
+                                    </div>
+
+                                    <h3>{stage.title}</h3>
+
+                                    <p>
+                                        {stage.description}
+                                    </p>
+
+                                    <div className="process-tags">
+                                        {stage.tags.map((tag) => (
+                                            <span key={tag}>
+                                                {tag}
+                                            </span>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                <div className="process-visual">
+                                    <div className="process-visual-grid" />
+
+                                    <div className="process-visual-glow" />
+
+                                    <span className="process-visual-number">
                                         {stage.number}
                                     </span>
 
-                                    <span className="process-label">
-                                        {stage.label}
-                                    </span>
-                                </div>
-
-                                <div className="process-icon-wrap">
-                                    <div className="process-icon">
+                                    <div className="process-visual-icon">
                                         <Icon
-                                            size={42}
-                                            strokeWidth={1.4}
+                                            size={72}
+                                            strokeWidth={0.8}
                                         />
                                     </div>
-                                </div>
 
-                                <div className="process-content">
-                                    <h3>{stage.title}</h3>
+                                    <div className="process-visual-line" />
 
-                                    <p>{stage.description}</p>
-                                </div>
-
-                                <div className="process-card-bottom">
-                                    <span>
-                                        0{index + 1} / 04
+                                    <span className="process-visual-label">
+                                        OTM / {stage.label}
                                     </span>
-
-                                    <div className="process-progress">
-                                        <span
-                                            style={{
-                                                width: `${
-                                                    ((index + 1) /
-                                                        stages.length) *
-                                                    100
-                                                }%`,
-                                            }}
-                                        />
-                                    </div>
                                 </div>
-                            </article>
-
-                            {index < stages.length - 1 && (
-                                <div className="process-arrow">
-                                    <ArrowRight
-                                        size={22}
-                                        strokeWidth={1.2}
-                                    />
-                                </div>
-                            )}
-                        </motion.div>
-                    );
-                })}
+                            </motion.article>
+                        );
+                    })}
+                </div>
             </div>
         </section>
     );
