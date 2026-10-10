@@ -1,3 +1,4 @@
+
 .portfolio-work-section {
     position: relative;
     z-index: 3;
@@ -5,23 +6,25 @@
     padding: 55px 7% 120px;
     background: transparent;
     overflow: visible;
+    box-sizing: border-box;
 }
 
 .portfolio-work-inner {
     position: relative;
     z-index: 4;
+    width: 100%;
     max-width: 1470px;
     margin: 0 auto;
 }
 
-/* Filters */
 .portfolio-filters {
     position: relative;
     z-index: 5;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
     gap: 18px;
-    margin-bottom: 58px;
+    margin-bottom: 75px;
     padding-top: 5px;
     overflow: visible;
 }
@@ -30,14 +33,14 @@
     position: relative;
     z-index: 6;
     flex-shrink: 0;
-    height: 62px;
-    padding: 0 30px;
+    height: 55px;
+    padding: 0 27px;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.025);
     color: #8e9caf;
     font-family: "Outfit", Arial, sans-serif;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 500;
     cursor: pointer;
     transition:
@@ -63,26 +66,28 @@
 .portfolio-filter-active:hover {
     border-color: #3478f6;
     background: #3478f6;
-    transform: translateY(-2px);
 }
 
-/* Grid */
 .portfolio-work-grid {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 32px;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 100px;
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1000px) {
     .portfolio-work-section {
         padding-right: 5%;
         padding-left: 5%;
     }
 
+    .portfolio-filters {
+        margin-bottom: 60px;
+    }
+
     .portfolio-work-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 75px;
     }
 }
 
@@ -92,8 +97,9 @@
     }
 
     .portfolio-filters {
+        flex-wrap: nowrap;
         gap: 10px;
-        margin-bottom: 35px;
+        margin-bottom: 40px;
         overflow-x: auto;
         scrollbar-width: none;
     }
@@ -103,14 +109,13 @@
     }
 
     .portfolio-filter {
-        height: 50px;
-        padding: 0 20px;
-        font-size: 13px;
+        height: 46px;
+        padding: 0 18px;
+        font-size: 12px;
     }
 
     .portfolio-work-grid {
-        grid-template-columns: 1fr;
-        gap: 25px;
+        gap: 55px;
     }
 }
 
