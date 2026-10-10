@@ -78,7 +78,7 @@ export default function Process() {
     const processRef = useRef(null);
 
     const isInView = useInView(processRef, {
-        once: false,
+        once: true,
         amount: 0.15,
     });
 

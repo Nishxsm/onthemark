@@ -75,8 +75,11 @@ export default function Service() {
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                setDark(entry.isIntersecting);
-                setVisible(entry.isIntersecting);
+                if (entry.isIntersecting) {
+                    setDark(true);
+                    setVisible(true);
+                    observer.disconnect();
+                }
             },
             {
                 threshold: 0.2,
@@ -146,9 +149,7 @@ export default function Service() {
                             </div>
 
                             <div className="service-card-bottom">
-                                <span>
-                                    EXPLORE SERVICE
-                                </span>
+                                <span>EXPLORE SERVICE</span>
 
                                 <span className="service-card-arrow">
                                     ↗

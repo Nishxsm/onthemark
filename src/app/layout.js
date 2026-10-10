@@ -1,6 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "@fontsource/anton";
+import CookieBanner from "../components/common/CookieBanner";
 
 
 const geistSans = Geist({
@@ -21,7 +22,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body>{children}</body>
+      <body>{children}<CookieBanner /></body>
     </html>
   );
 }

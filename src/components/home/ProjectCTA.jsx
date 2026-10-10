@@ -21,7 +21,7 @@ export default function ProjectCTA() {
                     y: 0,
                 }}
                 viewport={{
-                    once: false,
+                    once: true,
                     amount: 0.3,
                 }}
                 transition={{

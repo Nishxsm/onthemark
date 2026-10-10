@@ -1,0 +1,28 @@
+/* cookie policy page */
+
+.cookie-policy-page {
+    min-height: 100vh;
+    padding: 120px 6% 80px;
+    background: #080808;
+}
+
+.cookie-policy-frame {
+    display: block;
+    width: 100%;
+    max-width: 1100px;
+    height: 2600px;
+    margin: 0 auto;
+    border: none;
+    border-radius: 12px;
+    background: #ffffff;
+}
+
+@media (max-width: 650px) {
+    .cookie-policy-page {
+        padding: 100px 4% 60px;
+    }
+
+    .cookie-policy-frame {
+        height: 3400px;
+    }
+}
