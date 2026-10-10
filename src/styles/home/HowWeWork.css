@@ -1,10 +1,10 @@
+
 /* Process */
 
 .process {
     position: relative;
     width: 100%;
-    min-height: 100vh;
-    padding: 100px 3.2% 90px;
+    padding: 100px 3.2% 35px;
     overflow: hidden;
     box-sizing: border-box;
     background: #080808;
@@ -30,17 +30,12 @@
     margin-bottom: 65px;
 }
 
-/* Eyebrow */
-
 .process-eyebrow {
     display: flex;
     align-items: center;
     gap: 10px;
     margin-bottom: 18px;
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 11px;
     font-weight: 700;
     letter-spacing: 0.16em;
@@ -66,10 +61,7 @@
 .process-header h2 {
     max-width: 900px;
     margin: 0;
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: clamp(52px, 5.2vw, 88px);
     font-weight: 800;
     line-height: 0.91;
@@ -86,10 +78,7 @@
 .process-heading-row > p {
     width: 300px;
     margin: 0 20px 5px 0;
-    font-family:
-        "Outfit",
-        Arial,
-        sans-serif;
+    font-family: "Outfit", Arial, sans-serif;
     font-size: 14px;
     line-height: 1.5;
     color: #8fa4bd;
@@ -104,8 +93,6 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 36px;
 }
-
-/* Item */
 
 .process-item {
     position: relative;
@@ -195,10 +182,7 @@
 }
 
 .process-number {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 13px;
     font-weight: 700;
     letter-spacing: 0.08em;
@@ -206,17 +190,14 @@
 }
 
 .process-label {
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.16em;
     color: #7f91a8;
 }
 
-/* Icon */
+/* Circular icons */
 
 .process-icon-wrap {
     position: relative;
@@ -224,12 +205,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 70px;
-    height: 70px;
+    width: 86px;
+    height: 86px;
     margin-top: 42px;
-    border: 1px solid rgba(52, 120, 246, 0.28);
+    flex: 0 0 86px;
+    box-sizing: border-box;
+    border: 1px solid rgba(52, 120, 246, 0.35);
     border-radius: 50%;
-    background: rgba(52, 120, 246, 0.05);
+    background: rgba(52, 120, 246, 0.04);
+    box-shadow: none;
     transition:
         transform 0.35s ease,
         background 0.35s ease,
@@ -237,16 +221,40 @@
 }
 
 .process-card:hover .process-icon-wrap {
-    transform: rotate(-5deg) scale(1.06);
-    border-color: rgba(52, 120, 246, 0.65);
-    background: rgba(52, 120, 246, 0.1);
+    transform: translateY(-2px);
+    border-color: rgba(52, 120, 246, 0.7);
+    background: rgba(52, 120, 246, 0.09);
 }
 
 .process-icon {
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    border: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
     color: #3478f6;
+}
+
+.process-icon svg {
+    display: block;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    margin: 0;
+    border: none !important;
+    border-radius: 0 !important;
+    outline: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: inherit;
+    overflow: visible;
 }
 
 /* Content */
@@ -259,10 +267,7 @@
 
 .process-card h3 {
     margin: 0 0 13px;
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 29px;
     font-weight: 800;
     line-height: 0.95;
@@ -273,10 +278,7 @@
 .process-card p {
     max-width: 300px;
     margin: 0;
-    font-family:
-        "Outfit",
-        Arial,
-        sans-serif;
+    font-family: "Outfit", Arial, sans-serif;
     font-size: 14px;
     font-weight: 400;
     line-height: 1.5;
@@ -295,10 +297,7 @@
     margin-top: auto;
     padding-top: 20px;
     border-top: 1px solid rgba(255, 255, 255, 0.09);
-    font-family:
-        Arial,
-        Helvetica,
-        sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 9px;
     font-weight: 700;
     letter-spacing: 0.12em;
@@ -338,8 +337,7 @@
 
 @media (max-width: 1100px) {
     .process {
-        min-height: auto;
-        padding: 90px 5% 80px;
+        padding: 80px 5% 30px;
     }
 
     .process-heading-row {
@@ -347,8 +345,8 @@
     }
 
     .process-heading-row > p {
-        margin-top: 25px;
         width: 100%;
+        margin-top: 25px;
     }
 
     .process-grid {
@@ -365,11 +363,11 @@
 
 @media (max-width: 650px) {
     .process {
-        padding: 75px 6% 80px;
+        padding: 65px 6% 25px;
     }
 
     .process-header {
-        margin-bottom: 45px;
+        margin-bottom: 40px;
     }
 
     .process-heading-row {
@@ -415,14 +413,12 @@
 /* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
-    .process-card {
+    .process-card,
+    .process-icon-wrap {
         transition: none;
     }
 
-    .process-card:hover {
-        transform: none;
-    }
-
+    .process-card:hover,
     .process-card:hover .process-icon-wrap {
         transform: none;
     }

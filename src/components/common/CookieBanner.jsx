@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 const CONSENT_KEY = "otm-cookie-consent";
 
 const buttonBase = {
-    padding: "13px 17px",
+    padding: "12px 16px",
     borderRadius: "8px",
     fontSize: "12px",
     fontWeight: 700,
     cursor: "pointer",
     fontFamily: "inherit",
+    whiteSpace: "nowrap",
 };
 
 export default function CookieBanner() {
@@ -55,12 +56,12 @@ export default function CookieBanner() {
                     aria-label="Cookie consent"
                     style={{
                         position: "fixed",
-                        bottom: "22px",
-                        left: "22px",
-                        right: "22px",
+                        bottom: "20px",
+                        left: "20px",
+                        right: "20px",
                         zIndex: 2147483647,
                         boxSizing: "border-box",
-                        padding: "26px 30px",
+                        padding: "16px 18px",
                         border: "1px solid #34445e",
                         borderRadius: "14px",
                         background: "#101827",
@@ -68,78 +69,27 @@ export default function CookieBanner() {
                         boxShadow: "0 20px 60px rgba(0,0,0,0.55)",
                     }}
                 >
-                    <div
-                        style={{
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "space-between",
-                            gap: "28px",
-                            flexWrap: "wrap",
-                        }}
-                    >
-                        <div style={{ flex: "1 1 300px" }}>
-                            <span
-                                style={{
-                                    display: "block",
-                                    marginBottom: "8px",
-                                    color: "#3478f6",
-                                    fontSize: "10px",
-                                    fontWeight: 700,
-                                    letterSpacing: "0.15em",
-                                }}
-                            >
-                                YOUR PRIVACY MATTERS
-                            </span>
+                    <div className="cookie-banner-content">
+                        <div className="cookie-banner-copy">
+                            <h3>We use cookies</h3>
 
-                            <h3
-                                style={{
-                                    margin: "0 0 8px",
-                                    fontSize: "22px",
-                                    color: "#ffffff",
-                                }}
-                            >
-                                We use cookies
-                            </h3>
+                            <div className="cookie-banner-description">
+                                <span>
+                                    We use cookies to improve your browsing experience.
+                                    Choose whether to accept non-essential cookies.
+                                </span>
 
-                            <p
-                                style={{
-                                    margin: 0,
-                                    color: "#b5c0d0",
-                                    fontSize: "13px",
-                                    lineHeight: 1.7,
-                                }}
-                            >
-                                We use cookies to improve your browsing
-                                experience. Choose whether to accept
-                                non-essential cookies.
-                            </p>
-
-                            <button
-                                type="button"
-                                onClick={() => setPolicyOpen(true)}
-                                style={{
-                                    display: "block",
-                                    marginTop: "10px",
-                                    padding: 0,
-                                    border: 0,
-                                    background: "transparent",
-                                    color: "#77a5ff",
-                                    fontSize: "12px",
-                                    fontWeight: 600,
-                                    cursor: "pointer",
-                                }}
-                            >
-                                Read Cookie Policy →
-                            </button>
+                                <button
+                                    type="button"
+                                    onClick={() => setPolicyOpen(true)}
+                                    className="cookie-policy-link"
+                                >
+                                    Read Cookie Policy →
+                                </button>
+                            </div>
                         </div>
 
-                        <div
-                            style={{
-                                display: "flex",
-                                flexWrap: "wrap",
-                                gap: "10px",
-                            }}
-                        >
+                        <div className="cookie-banner-actions">
                             <button
                                 type="button"
                                 onClick={() => handleConsent("rejected")}
@@ -287,6 +237,77 @@ export default function CookieBanner() {
                     </section>
                 </div>
             )}
+
+            <style jsx>{`
+                .cookie-banner-content {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 24px;
+                }
+
+                .cookie-banner-copy {
+                    flex: 1 1 auto;
+                    min-width: 0;
+                }
+
+                .cookie-banner-copy h3 {
+                    margin: 0 0 3px;
+                    font-size: 22px;
+                    line-height: 1.2;
+                    color: #ffffff;
+                }
+
+                .cookie-banner-description {
+                    display: flex;
+                    align-items: center;
+                    flex-wrap: wrap;
+                    column-gap: 5px;
+                    row-gap: 2px;
+                    color: #b5c0d0;
+                    font-size: 13px;
+                    line-height: 1.4;
+                }
+
+                .cookie-policy-link {
+                    flex-shrink: 0;
+                    padding: 0;
+                    border: 0;
+                    background: transparent;
+                    color: #77a5ff;
+                    font-size: 13px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    white-space: nowrap;
+                }
+
+                .cookie-banner-actions {
+                    display: flex;
+                    align-items: center;
+                    flex-shrink: 0;
+                    gap: 12px;
+                }
+
+                @media (max-width: 760px) {
+                    .cookie-banner-content {
+                        align-items: flex-start;
+                        flex-direction: column;
+                        gap: 14px;
+                    }
+
+                    .cookie-banner-actions {
+                        width: 100%;
+                        flex-wrap: wrap;
+                    }
+                }
+
+                @media (max-width: 480px) {
+                    .cookie-banner-actions button {
+                        flex: 1;
+                        white-space: normal;
+                    }
+                }
+            `}</style>
         </>
     );
 }

@@ -51,16 +51,12 @@ export default function HowWeWork() {
     const processRef = useRef(null);
 
     const isInView = useInView(processRef, {
-        once: false,
+        once: true,
         amount: 0.2,
     });
 
     return (
-        <section
-            className="process"
-            id="about"
-            ref={processRef}
-        >
+        <section className="process" id="about" ref={processRef}>
             <NetworkBackground />
 
             <div className="process-header">
@@ -76,8 +72,8 @@ export default function HowWeWork() {
                     </h2>
 
                     <p>
-                        A straightforward process designed to
-                        turn ideas into useful digital products.
+                        A straightforward process designed to turn ideas into
+                        useful digital products.
                     </p>
                 </div>
             </div>
@@ -90,20 +86,11 @@ export default function HowWeWork() {
                         <motion.div
                             className="process-item"
                             key={stage.number}
-                            initial={{
-                                opacity: 0,
-                                y: 30,
-                            }}
+                            initial={{ opacity: 0, y: 30 }}
                             animate={
                                 isInView
-                                    ? {
-                                          opacity: 1,
-                                          y: 0,
-                                      }
-                                    : {
-                                          opacity: 0,
-                                          y: 30,
-                                      }
+                                    ? { opacity: 1, y: 0 }
+                                    : { opacity: 0, y: 30 }
                             }
                             transition={{
                                 duration: 0.65,
@@ -127,20 +114,18 @@ export default function HowWeWork() {
                                         <Icon
                                             size={42}
                                             strokeWidth={1.4}
+                                            aria-hidden="true"
                                         />
                                     </div>
                                 </div>
 
                                 <div className="process-content">
                                     <h3>{stage.title}</h3>
-
                                     <p>{stage.description}</p>
                                 </div>
 
                                 <div className="process-card-bottom">
-                                    <span>
-                                        0{index + 1} / 04
-                                    </span>
+                                    <span>{stage.number} / 04</span>
 
                                     <div className="process-progress">
                                         <span
@@ -161,6 +146,7 @@ export default function HowWeWork() {
                                     <ArrowRight
                                         size={22}
                                         strokeWidth={1.2}
+                                        aria-hidden="true"
                                     />
                                 </div>
                             )}
