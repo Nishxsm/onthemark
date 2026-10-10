@@ -6,8 +6,7 @@ const company = [
     { label: "Services", href: "/services" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Contact", href: "/contact" },
-    { label: "Privacy Policy", href: "/privacy-policy" },
-    { label: "Cookies", href: "/cookies" }
+    { label: "Privacy Policy", href: "/privacy-policy" }
 ];
 
 const services = [
